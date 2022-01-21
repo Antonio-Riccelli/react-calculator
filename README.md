@@ -1,5 +1,7 @@
 # Calculator
 
+#### View it [here](https://react-calculatrr.netlify.app/)
+
 A classic calculator built using React and CSS. Fourth project for the [freeCodeCamp.Org Front End Development Libraries certification](https://www.freecodecamp.org/learn/front-end-development-libraries/#front-end-development-libraries-projects).
 
 ## Technologies
