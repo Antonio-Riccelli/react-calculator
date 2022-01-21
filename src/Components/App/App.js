@@ -18,20 +18,56 @@ if (e.target.value === `0` && display === `0`) {
   return;
 }
 
+if (e.target.value === ".") {
+  const arrOfDecimalPoint = display.split("").filter(char => char === ".")
+  if (arrOfDecimalPoint.length) {
+    return
+  }
+}
+
+if (e.target.value === "+") {
+  const arrOfDecimalPoint = display.split("").filter(char => char === "+")
+  if (arrOfDecimalPoint.length) {
+    return
+  }
+}
+
+if (e.target.value === "x") {
+  const arrOfDecimalPoint = display.split("").filter(char => char === "x")
+  if (arrOfDecimalPoint.length) {
+    return
+  }
+}
+
+if (e.target.value === "/") {
+  const arrOfDecimalPoint = display.split("").filter(char => char === "/")
+  if (arrOfDecimalPoint.length) {
+    return
+  }
+}
+
 
 if (e.target.value === "=") {
 const operators = ["+", "-", "x", "/"];
+// console.log("Type of display:", typeof display);
 const searchOperator = operators.filter(o => display.indexOf(o) > -1);
-// console.log("searchOperator", searchOperator);
-const operationArr = display.split(searchOperator);
-// console.log("Split arr", operationArr);
+const operationArr = display.split(searchOperator[0]);
+if (searchOperator.length > 1) {
+  const num = `${operationArr.pop()}`;
+  console.log("current num:", num);
+  operationArr.push(+num);
+  console.log("This is the operation arr", operationArr);
+  // operationArr.forEach(e => {console.log(typeof e)})
+}
+console.log("Searchoperator",searchOperator )
+console.log("operationArr", operationArr)
 let operationResult = 0;
 switch(searchOperator[0]) {
   case "x":
     operationResult = operationArr[0] * operationArr[1];
     break;
   case "+":
-    operationResult = operationArr[0] + operationArr[1];
+    operationResult = +operationArr[0] + +operationArr[1];
     break;
   case "-":
     operationResult = operationArr[0] - operationArr[1];
