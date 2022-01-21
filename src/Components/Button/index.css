@@ -1,0 +1,15 @@
+button {
+    background-color: black;
+    color: white;
+    border: 1px solid crimson;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+button:hover {
+    background-color: #200;
+}
+
+button:active {
+    background-color: #500;
+}

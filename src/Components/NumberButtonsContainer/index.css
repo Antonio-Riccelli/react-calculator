@@ -1,0 +1,5 @@
+#number-buttons-container {
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    grid-template-rows: 50px 50px 50px 50px;
+}

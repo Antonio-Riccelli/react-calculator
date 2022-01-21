@@ -1,0 +1,40 @@
+#operator-buttons-container {
+    display: grid;
+    grid-template-columns: 75px 75px;
+    grid-template-rows: 2fr;
+    text-align: center;
+}
+
+#operator-buttons-container > * {
+    background-color: lightgray;
+}
+
+#operator-buttons-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+}
+
+
+
+#equals-wrapper {
+    /* display: flex;
+    align-items: center; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#equals-wrapper > * {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#equals {
+    text-align: center;
+}
