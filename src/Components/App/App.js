@@ -23,6 +23,7 @@ const displayArr = display.split("");
 let nOfDots = displayArr.filter(char => char === ".").length;
 console.log("dots length", nOfDots);
 
+// eslint-disable-next-line array-callback-return
 let nOfOps = displayArr.filter((char) => {
   if (char === "+" || char === "-" || char === "x" || char === "/") {
     return true;
@@ -37,6 +38,7 @@ if (nOfDots && !nOfOps) {return};
 }
 
 if (e.target.value === "+") {
+
   console.log("Current display value", display)
   const arrOfDecimalPoint = String(display).split("").filter(char => char === "+")
   if (arrOfDecimalPoint.length) {
@@ -45,6 +47,7 @@ if (e.target.value === "+") {
 }
 
 if (e.target.value === "x") {
+  
   console.log("Current display value", display)
   const arrOfDecimalPoint = String(display).split("").filter(char => char === "x")
   if (arrOfDecimalPoint.length) {
@@ -113,6 +116,12 @@ if (display === 0) {
 } else if (display) {
 updateDisplay(display + e.target.value)
 console.log("New display state:", display)
+}
+
+if (/[+-x\/]/.test(e.target.value)) {
+  if (display === 0) {
+    updateDisplay(`${display}${e.target.value}`);
+  }
 }
 }
 
