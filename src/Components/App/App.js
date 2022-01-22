@@ -15,6 +15,7 @@ if (e.target.value === "C") {
 
 if (e.target.value === `0` && display === `0`) {
   updateDisplay(0);
+  console.log("New display state:", display)
   return;
 }
 
@@ -23,7 +24,6 @@ const displayArr = display.split("");
 let nOfDots = displayArr.filter(char => char === ".").length;
 console.log("dots length", nOfDots);
 
-// eslint-disable-next-line array-callback-return
 let nOfOps = displayArr.filter((char) => {
   if (char === "+" || char === "-" || char === "x" || char === "/") {
     return true;
@@ -109,6 +109,13 @@ updateDisplay(operationResult);
 return
 }
 
+// if (/[+-x\/]/.test(e.target.value)) {
+//   if (display === 0) {
+//     updateDisplay(`${display}${e.target.value}`);
+//     return
+//   }
+// }
+
 if (display === 0) {
   updateDisplay(e.target.value)
   console.log("New display state:", display)
@@ -118,11 +125,7 @@ updateDisplay(display + e.target.value)
 console.log("New display state:", display)
 }
 
-if (/[+-x\/]/.test(e.target.value)) {
-  if (display === 0) {
-    updateDisplay(`${display}${e.target.value}`);
-  }
-}
+
 }
 
   return (
