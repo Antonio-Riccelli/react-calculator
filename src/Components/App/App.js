@@ -19,29 +19,51 @@ if (e.target.value === `0` && display === `0`) {
 }
 
 if (e.target.value === ".") {
-  const arrOfDecimalPoint = display.split("").filter(char => char === ".")
-  if (arrOfDecimalPoint.length) {
-    return
-  }
+const displayArr = display.split("");
+let nOfDots = displayArr.filter(char => char === ".").length;
+console.log("dots length", nOfDots);
+
+let nOfOps = displayArr.filter((char) => {
+  if (char === "+" || char === "-" || char === "x" || char === "/") {
+    return true;
+  }}
+).length;
+console.log("ops length", nOfOps);
+if (nOfDots === 2) {return}
+if (nOfDots >= 1 && !nOfOps) {return}
+if (nOfDots === 2 && !nOfOps) {return}
+
+if (nOfDots && !nOfOps) {return};
 }
 
 if (e.target.value === "+") {
-  const arrOfDecimalPoint = display.split("").filter(char => char === "+")
+  console.log("Current display value", display)
+  const arrOfDecimalPoint = String(display).split("").filter(char => char === "+")
   if (arrOfDecimalPoint.length) {
     return
   }
 }
 
 if (e.target.value === "x") {
-  const arrOfDecimalPoint = display.split("").filter(char => char === "x")
+  console.log("Current display value", display)
+  const arrOfDecimalPoint = String(display).split("").filter(char => char === "x")
   if (arrOfDecimalPoint.length) {
     return
   }
 }
 
 if (e.target.value === "/") {
-  const arrOfDecimalPoint = display.split("").filter(char => char === "/")
+  console.log("Current display value", display)
+  const arrOfDecimalPoint = String(display).split("").filter(char => char === "/")
   if (arrOfDecimalPoint.length) {
+    return
+  }
+}
+
+if (e.target.value === "-") {
+  console.log("Current display value", display)
+  const arrOfDecimalPoint = String(display).split("").filter(char => char === "-")
+  if (arrOfDecimalPoint.length > 1) {
     return
   }
 }
@@ -49,7 +71,6 @@ if (e.target.value === "/") {
 
 if (e.target.value === "=") {
 const operators = ["+", "-", "x", "/"];
-// console.log("Type of display:", typeof display);
 const searchOperator = operators.filter(o => display.indexOf(o) > -1);
 const operationArr = display.split(searchOperator[0]);
 if (searchOperator.length > 1) {
@@ -57,7 +78,7 @@ if (searchOperator.length > 1) {
   console.log("current num:", num);
   operationArr.push(+num);
   console.log("This is the operation arr", operationArr);
-  // operationArr.forEach(e => {console.log(typeof e)})
+  
 }
 console.log("Searchoperator",searchOperator )
 console.log("operationArr", operationArr)
@@ -79,26 +100,21 @@ switch(searchOperator[0]) {
       return;
 }
 
-// operationResult = +operationResult.toFixed(4);
 console.log("Result:", operationResult)
+if (/\./.test(operationResult)) {operationResult = operationResult.toFixed(4)}
 updateDisplay(operationResult);
 return
 }
 
-
 if (display === 0) {
   updateDisplay(e.target.value)
   console.log("New display state:", display)
+
 } else if (display) {
 updateDisplay(display + e.target.value)
 console.log("New display state:", display)
 }
-
 }
-
-
-
-
 
   return (
     <div className="App">
