@@ -2,12 +2,23 @@
 
 #### View it [here](https://react-calculatrr.netlify.app/)
 
-A classic calculator built using React and CSS. Fourth project for the [freeCodeCamp.Org Front End Development Libraries certification](https://www.freecodecamp.org/learn/front-end-development-libraries/#front-end-development-libraries-projects).
+A classic calculator built using React and CSS. It allows the user to perform the four basic operations with integers and decimals.
 
+# Installation
+
+1. Clone repo to your computer.
+2. `cd` yourself in the new folder
+3. Open your editor or IDE in the folder
+4. Run `npm i` to install all dependencies
+5. run `npm start` to spin up the project
 ## Technologies
 
 - React
 - CSS
+
+## License
+
+[MIT](https://spdx.org/licenses/MIT.html)
 
 ### Project Diary
 
