@@ -1,5 +1,7 @@
 # Calculator
 
+![demo](demo.gif)
+
 #### View it [here](https://react-calculatrr.netlify.app/)
 
 A classic calculator built using React and CSS. It allows the user to perform the four basic operations with integers and decimals.
@@ -19,6 +21,8 @@ A classic calculator built using React and CSS. It allows the user to perform th
 ## License
 
 [MIT](https://spdx.org/licenses/MIT.html)
+
+---- 
 
 ### Project Diary
 
